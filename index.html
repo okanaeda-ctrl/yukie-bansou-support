@@ -9,432 +9,635 @@
 <meta property="og:title" content="魂流開導・専属伴走サポート">
 <meta property="og:description" content="もう、一人で悩まなくていい。あなたが望む未来へ、私が一緒に歩んでいくよ。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/fv.jpg">
-<meta name="theme-color" content="#f7f3ea">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#f7f2e8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="preload" as="image" href="img/fv.jpg">
+<link rel="preload" as="image" href="img/hero.jpg">
 </head>
 <body>
 
-<main class="page">
+<div class="prog" aria-hidden="true"><i data-prog></i></div>
 
-<!-- ========== 01 ファーストビュー ========== -->
-<header class="fv">
-  <div class="fv-orn" aria-hidden="true"></div>
-  <div class="particles" id="particles" aria-hidden="true"></div>
-  <div class="fv-text">
-    <p class="fv-brand">魂流開導・専属伴走サポート</p>
-    <h1 class="fv-title">もう、<br>一人で悩まなくて<br>いい。</h1>
-    <p class="fv-sub">あなたが望む未来へ、<br>私が一緒に歩んでいくよ。</p>
+<!-- ============ ファーストビュー ============ -->
+<header class="hero">
+  <div class="hero-orn" aria-hidden="true"></div>
+  <div class="hero-person">
+    <img src="img/hero.jpg" width="900" height="1125" alt="和室の窓辺で、やわらかな光の中に座る白衣の女性" fetchpriority="high">
   </div>
-  <figure class="fv-photo">
-    <img src="img/fv.jpg" width="1400" height="933" alt="和室の窓辺で、やわらかな光の中に座る女性" fetchpriority="high">
-  </figure>
-  <div class="scrollcue" aria-hidden="true"><span>SCROLL</span><i></i></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <p class="lead rv">魂流開導・専属伴走サポート</p>
+    <h1 class="lines"><span class="ln">もう、</span><br><span class="ln"><span class="gg">一人で悩まなくて</span></span><br><span class="ln">いい。</span></h1>
+    <p class="tag rv">あなたが望む未来へ、<br>私が一緒に歩んでいくよ。</p>
+    <div class="scrollcue rv" aria-hidden="true"><span class="lat">SCROLL</span><i></i></div>
+  </div>
 </header>
 
 <!-- 今だけ限定（ご依頼の追加表記） -->
-<aside class="limit-band" aria-label="今だけ限定料金のご案内">
-  <p class="limit-band-head"><span class="tag-red">今だけ限定料金</span><span class="tag-line">今月の伴走枠 <b>残りわずか</b></span></p>
-  <div class="cd" data-countdown aria-live="off">
-    <span class="cd-label">限定料金の残り時間</span>
-    <span class="cd-time"><b data-d>3</b><i>日</i><b data-h>00</b><i>時間</i><b data-m>00</b><i>分</i><b data-s>00</b><i>秒</i></span>
-  </div>
-  <p class="cd-expired" hidden>限定期間は終了しました。</p>
-  <a class="link-plans" href="#plans">プランと料金を見る</a>
-</aside>
-
-<!-- ========== 02 読み終わったあなたへ ========== -->
-<section class="sec">
-  <h2 class="h2">読み終わったあなたへ</h2>
-  <p>本鑑定を読み終わった後、<br>ふっと心が軽くならなかった？</p>
-  <p class="em-quote wipe">「これから変われるかもしれない」</p>
-  <p>そんな希望を感じたんじゃないかな。</p>
-  <p>実は、あなたの流れはもうすでに<br><strong>変わり始めているの。</strong></p>
-  <p>今のあなたは、理想の未来へ向かうための<br><strong>大きな一歩を踏み出しているんだよ。</strong></p>
-</section>
-
-<!-- ========== 03 その感覚は、本物。 ========== -->
-<section class="sec sec-tint">
-  <h2 class="h2">その感覚は、本物。</h2>
-  <p>本鑑定を受けて感じた、</p>
-  <p class="em-quote wipe">「何かが変わったかもしれない」</p>
-  <p>という感覚。</p>
-  <p>それは、あなたの流れが動き始めた<br><strong>大切な合図なの。</strong></p>
-</section>
-
-<!-- ========== 04 でも、数日後には戻ってしまう ========== -->
-<section class="sec">
-  <h2 class="h2">でも、数日後には<br>戻ってしまう</h2>
-  <p>せっかく本鑑定を受けて、<br>変わり始めたあなたの流れ。</p>
-  <p>でも、その流れを整え続けなければ、<br><strong>数日後には元に戻ってしまうの。</strong></p>
-  <figure class="photo photo-bleed">
-    <img src="img/worry.jpg" width="1200" height="888" alt="両手で顔を覆い、悩んでいる女性" loading="lazy" decoding="async">
-  </figure>
-  <p>元に戻ってしまうと、</p>
-  <ul class="list-back">
-    <li>また小さなことで不安になる</li>
-    <li>悪いことばかり考えてしまう</li>
-    <li>「どうせ変わらない」と諦めてしまう</li>
-  </ul>
-  <p>そして、以前と同じ毎日に戻ってしまう。</p>
-  <p>だからこそ、<br><strong class="big">流れを知るだけではなく、<br>整え続けることが大切なの。</strong></p>
-  <a class="minicta" href="#plans">プランと料金を見る<span>今だけ限定料金・特典付き</span></a>
-</section>
-
-<!-- ========== 05 今までも、変わろうとしたんじゃないかな？ ========== -->
-<section class="sec sec-tint">
-  <h2 class="h2">今までも、変わろうと<br>したんじゃないかな？</h2>
-  <ol class="days">
-    <li><span class="days-q">「今度こそ人生を変えたい」</span>そう決意した日。</li>
-    <li><span class="days-q">「これで変われる」</span>誰かの鑑定を受けて、希望を感じた日。</li>
-    <li><span class="days-q">「私も頑張ろう」</span>SNSの投稿を見て、前向きになった日。</li>
-    <li><span class="days-q">「今年こそ幸せになりたい」</span>新しい年を迎えて、そう願った日。</li>
-  </ol>
-  <p>きっと、何度もあったんじゃないかな。</p>
-  <p>でも、気づけば何も変わらず、<br>以前と同じ毎日を過ごしてしまう。</p>
-  <p><strong>それは、あなたの努力が<br>足りなかったからじゃないの。</strong></p>
-  <p>一人で変わり続けることは、<br>それだけ難しいことなんだよ。</p>
-</section>
-
-<!-- ========== 06 では、どうすれば変われるのか ========== -->
-<section class="sec">
-  <h2 class="h2">では、どうすれば<br>変われるのか</h2>
-  <p>答えは、とてもシンプルなの。</p>
-  <p><strong class="big">一人で頑張らず、<br>導いてくれる人と一緒に進むこと。</strong></p>
-  <p>例えば、学校の勉強を思い出してみて。</p>
-  <p>教科書を渡されただけでは、<br>なかなか理解できないよね。</p>
-  <p>でも、先生がそばで教えてくれたら、<br>分からないことも解決できて、<br>前に進める。</p>
-  <p><strong>実は、人生の流れも同じなの。</strong></p>
-
-  <h3 class="h3 center">本鑑定は「教科書」</h3>
-  <div class="compare" role="table" aria-label="本鑑定と伴走サポートの違い">
-    <div class="compare-col" role="row">
-      <p class="compare-name" role="columnheader">本鑑定</p>
-      <p class="compare-eq" role="cell">＝<b>教科書</b></p>
-      <p class="compare-desc" role="cell">今の流れと<br>進むべき道を知る。</p>
+<div class="limited">
+  <div class="limbox rv">
+    <span class="lt">今だけ限定料金</span>
+    <p class="lh">今だけの<span class="g">限定料金</span>で<br>ご案内しているよ</p>
+    <p class="ld" data-limit-prices></p>
+    <div class="cd" data-countdown aria-label="限定料金の残り時間">
+      <div class="u"><b data-d>3</b><i>日</i></div><div class="sep">:</div>
+      <div class="u"><b data-h>00</b><i>時間</i></div><div class="sep">:</div>
+      <div class="u"><b data-m>00</b><i>分</i></div><div class="sep">:</div>
+      <div class="u s"><b data-s>00</b><i>秒</i></div>
     </div>
-    <div class="compare-plus" aria-hidden="true"></div>
-    <div class="compare-col is-red" role="row">
-      <p class="compare-name" role="columnheader">伴走サポート</p>
-      <p class="compare-eq" role="cell">＝<b>先生</b></p>
-      <p class="compare-desc" role="cell">毎日寄り添い、<br>一緒に進んでいく。</p>
+    <p class="cd-expired" hidden>限定期間は終了しました。</p>
+    <p class="ln2">今だけ、特別特典<b>《魂流開運の待ち受け》</b>を無料でプレゼント</p>
+    <div class="stock">
+      <div class="sl"><span>今月の伴走枠</span><b>残りわずか</b></div>
+      <div class="bar"><i style="--fill:90%"></i></div>
     </div>
   </div>
-  <p>本鑑定で進むべき道が分かっても、<br>一人では迷ってしまうことがある。</p>
-  <p><strong>だからこそ、そばで支えてくれる<br>存在が必要なの。</strong></p>
+</div>
+
+<a class="minicta rv" href="#plans">プランと料金を見る<span class="s">今だけ限定料金・特典付き</span></a>
+
+<!-- ============ I 読み終わったあなたへ ============ -->
+<section class="s-ai">
+  <div class="wrap">
+    <div class="chapno">I</div>
+    <div class="eyebrow lat">After the reading</div>
+    <h2 class="lines"><span class="ln">読み終わった</span><br><span class="ln">あなたへ</span></h2>
+    <div class="gline"></div>
+
+    <div class="stag">
+      <p class="lead-p">本鑑定を読み終わった後、<br>ふっと心が軽くならなかった？</p>
+    </div>
+    <p class="kq rv-b"><span class="wipe">「これから変われるかもしれない」</span></p>
+    <div class="stag">
+      <p class="tc">そんな希望を感じたんじゃないかな。</p>
+      <p class="tc">実は、あなたの流れはもうすでに<br><strong class="mk">変わり始めているの。</strong></p>
+    </div>
+    <div class="big rv-b"><span class="s">今のあなたは、理想の未来へ向かうための</span><span class="g">大きな一歩</span>を<br>踏み出しているんだよ。</div>
+  </div>
 </section>
 
-<!-- ========== 07 これからは、私があなたのそばにいるよ。 ========== -->
-<section class="sec sec-guide">
-  <figure class="guide-photo">
-    <img src="img/guide.jpg" width="681" height="1003" alt="白衣に緋袴の女性が、手を合わせて微笑んでいる" loading="lazy" decoding="async">
-  </figure>
-  <h2 class="h2">これからは、<br>私があなたの<br>そばにいるよ。</h2>
-  <p><strong class="big">もう、一人で悩まなくて大丈夫。</strong></p>
-  <p>不安になったときも、<br>どうすればいいか分からないときも、<br>私に話してね。</p>
-  <p><strong>あなたが望む未来へ、<br>私が一緒に歩んでいくよ。</strong></p>
-  <p>そのために用意したのが、</p>
-  <p class="name-plate">魂流開導・専属伴走サポート</p>
+<div class="band" aria-hidden="true"></div>
+
+<!-- ============ II その感覚は、本物。 ============ -->
+<section class="s-plain">
+  <div class="wrap">
+    <div class="chapno">II</div>
+    <div class="eyebrow lat">It is real</div>
+    <h2 class="lines"><span class="ln">その感覚は、</span><br><span class="ln"><span class="gg">本物。</span></span></h2>
+    <div class="gline"></div>
+
+    <div class="stag">
+      <p class="lead-p tc">本鑑定を受けて感じた、</p>
+    </div>
+    <p class="kq rv-b"><span class="wipe">「何かが変わったかもしれない」</span></p>
+    <div class="stag"><p class="tc">という感覚。</p></div>
+    <div class="big rv-b"><span class="s">それは、あなたの流れが動き始めた</span><span class="wipe">大切な合図なの。</span></div>
+  </div>
 </section>
 
-<!-- ========== 08 あなたを支える、4つのサポート ========== -->
-<section class="sec sec-tint">
-  <h2 class="h2">あなたを支える、<br>4つのサポート</h2>
-  <p>あなたが前に進めるように、<br>私が4つの方法で支えていくよ。</p>
+<!-- ============ III でも、数日後には戻ってしまう ============ -->
+<section class="s-ai-r">
+  <div class="wrap">
+    <div class="chapno">III</div>
+    <div class="eyebrow lat">A few days later</div>
+    <h2 class="lines"><span class="ln">でも、数日後には</span><br><span class="ln">戻ってしまう</span></h2>
+    <div class="gline"></div>
 
-  <div class="supports">
-    <article class="support">
-      <header class="support-head">
-        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h36M12 34a12 12 0 0 1 24 0"/><path d="M24 10v6M10.5 16.5l4 4M37.5 16.5l-4 4M4 26h5M39 26h5"/><path d="M14 40h20"/></svg>
-        <h3 class="support-title"><span class="num">①</span>毎朝のヒーリングメッセージ</h3>
-      </header>
+    <div class="stag">
+      <p class="lead-p">せっかく本鑑定を受けて、<br>変わり始めたあなたの流れ。</p>
+      <p>でも、その流れを整え続けなければ、</p>
+    </div>
+    <div class="big rv-b"><span class="wipe">数日後には<br>元に戻ってしまうの。</span></div>
+
+    <div class="ph-full px rv-s">
+      <img src="img/worry45.jpg" width="900" height="1125" alt="両手で顔を覆い、悩んでいる女性" loading="lazy" decoding="async">
+      <div class="ov rv-b">元に戻ってしまうと、</div>
+    </div>
+
+    <ul class="back stag">
+      <li>また小さなことで不安になる</li>
+      <li>悪いことばかり考えてしまう</li>
+      <li>「どうせ変わらない」と諦めてしまう</li>
+    </ul>
+    <p class="whisper rv">そして、以前と同じ毎日に戻ってしまう。</p>
+
+    <!-- 参考LP【まり】と同じ「保てる／戻る」のグラフ（ご依頼） -->
+    <figure class="graph rv" data-graph>
+      <svg class="dg" viewBox="0 0 360 200" role="img" aria-label="本鑑定のあとの流れ。伴走があると良い流れを保てる。一人だと数日後には元に戻る">
+        <line class="ax" x1="44" y1="152" x2="344" y2="152"/><line class="ax" x1="44" y1="18" x2="44" y2="152"/>
+        <line class="grid" x1="44" y1="40" x2="344" y2="40"/><line class="grid" x1="44" y1="96" x2="344" y2="96"/>
+        <text class="tx" x="50" y="174" text-anchor="middle">本鑑定直後</text><text class="tx" x="138" y="174" text-anchor="middle">翌日</text><text class="tx" x="230" y="174" text-anchor="middle">数日後</text><text class="tx" x="326" y="174" text-anchor="middle">一週間</text>
+        <text class="tx" x="38" y="38" text-anchor="end">良い</text><text class="tx" x="38" y="150" text-anchor="end">元通り</text>
+        <path class="ln2" pathLength="1" d="M44 40 C 104 46, 146 116, 230 136 S 304 148, 326 149"/>
+        <path class="ln" pathLength="1" d="M44 40 C 112 50, 160 54, 230 46 S 304 36, 326 34"/>
+        <circle class="dotr" cx="230" cy="136" r="5"/><text class="ts" x="240" y="128">一人だと、戻る</text>
+        <circle class="dot" cx="326" cy="34" r="5"/><text class="tg" x="334" y="22" text-anchor="end">伴走があると、保てる</text>
+      </svg>
+      <figcaption class="dgcap"><span><i class="d"></i>一人で戻っていく人</span><span><i></i>伴走がある人</span></figcaption>
+    </figure>
+
+    <div class="stag"><p class="tc">だからこそ、</p></div>
+    <div class="big rv-b"><span class="s">流れを知るだけではなく、</span><span class="wipe">整え続けることが<br>大切なの。</span></div>
+
+    <a class="minicta rv" href="#plans">プランと料金を見る<span class="s">今だけ限定料金・特典付き</span></a>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"></div>
+
+<!-- ============ IV 今までも、変わろうとしたんじゃないかな？ ============ -->
+<section class="s-plain">
+  <div class="wrap">
+    <div class="chapno">IV</div>
+    <div class="eyebrow lat">Not the first time</div>
+    <h2 class="lines"><span class="ln">今までも、</span><br><span class="ln">変わろうと</span><br><span class="ln">したんじゃないかな？</span></h2>
+    <div class="gline"></div>
+
+    <ol class="days stag">
+      <li><span class="q">「今度こそ人生を変えたい」</span>そう決意した日。</li>
+      <li><span class="q">「これで変われる」</span>誰かの鑑定を受けて、希望を感じた日。</li>
+      <li><span class="q">「私も頑張ろう」</span>SNSの投稿を見て、前向きになった日。</li>
+      <li><span class="q">「今年こそ幸せになりたい」</span>新しい年を迎えて、そう願った日。</li>
+    </ol>
+
+    <div class="stag">
+      <p class="lead-p tc">きっと、何度もあったんじゃないかな。</p>
+      <p class="tc">でも、気づけば何も変わらず、<br>以前と同じ毎日を過ごしてしまう。</p>
+    </div>
+    <div class="big rv-b"><span class="s">それは、あなたの努力が</span>足りなかったから<br><span class="wipe">じゃないの。</span></div>
+    <div class="stag">
+      <p class="tc">一人で変わり続けることは、<br>それだけ<span class="ew">難しいこと</span>なんだよ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ V では、どうすれば変われるのか ============ -->
+<section class="s-ai">
+  <div class="wrap">
+    <div class="chapno">V</div>
+    <div class="eyebrow lat">The answer</div>
+    <h2 class="lines"><span class="ln">では、どうすれば</span><br><span class="ln">変われるのか</span></h2>
+    <div class="gline"></div>
+
+    <div class="stag"><p class="lead-p tc">答えは、とてもシンプルなの。</p></div>
+    <div class="big rv-b"><span class="s">一人で頑張らず、</span><span class="wipe">導いてくれる人と<br>一緒に進むこと。</span></div>
+
+    <div class="stag">
+      <p>例えば、学校の勉強を思い出してみて。</p>
+      <p>教科書を渡されただけでは、<br>なかなか理解できないよね。</p>
+      <p>でも、先生がそばで教えてくれたら、<br>分からないことも解決できて、<br>前に進める。</p>
+    </div>
+    <p class="kq rv-b"><span class="wipe">実は、人生の流れも同じなの。</span></p>
+
+    <h3 class="h3 tc rv">本鑑定は「教科書」</h3>
+    <div class="compare rv" role="table" aria-label="本鑑定と伴走サポートの違い">
+      <div class="col" role="row">
+        <p class="nm" role="columnheader">本鑑定</p>
+        <p class="eq" role="cell"><small>＝</small>教科書</p>
+        <p class="ds" role="cell">今の流れと<br>進むべき道を知る。</p>
+      </div>
+      <div class="plus" aria-hidden="true"></div>
+      <div class="col is-red" role="row">
+        <p class="nm" role="columnheader">伴走サポート</p>
+        <p class="eq" role="cell"><small>＝</small>先生</p>
+        <p class="ds" role="cell">毎日寄り添い、<br>一緒に進んでいく。</p>
+      </div>
+    </div>
+
+    <div class="stag"><p class="tc">本鑑定で進むべき道が分かっても、<br>一人では迷ってしまうことがある。</p></div>
+    <div class="quote stag">
+      <p>だからこそ、<br>そばで支えてくれる<br><strong>存在が必要なの。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VI これからは、私があなたのそばにいるよ。 ============ -->
+<section class="s-dark">
+  <div class="particles" data-particles="12" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="chapno">VI</div>
+    <div class="eyebrow lat">By your side</div>
+    <div class="ph portrait rv-s">
+      <img src="img/guide.jpg" width="681" height="1003" alt="白衣に緋袴の女性が、手を合わせて微笑んでいる" loading="lazy" decoding="async">
+    </div>
+    <h2 class="lines"><span class="ln">これからは、</span><br><span class="ln">私があなたの</span><br><span class="ln">そばにいるよ。</span></h2>
+    <div class="gline"></div>
+
+    <div class="big rv-b">もう、<span class="g">一人で<br>悩まなくて大丈夫。</span></div>
+    <div class="stag">
+      <p class="tc">不安になったときも、<br>どうすればいいか分からないときも、<br>私に話してね。</p>
+    </div>
+    <div class="quote stag">
+      <p>あなたが望む未来へ、<br>私が一緒に歩んでいくよ。</p>
+    </div>
+    <div class="stag"><p class="tc">そのために用意したのが、</p></div>
+    <p class="nameplate rv-b"><span class="gg">魂流開導・専属伴走サポート</span></p>
+
+    <a class="cta rv" href="#plans">
+      <span class="arrow" aria-hidden="true">▼</span>
+      <span class="btn">プランと料金を見る</span>
+      <span class="sub">▶ 今だけ限定料金・特典付き</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ VII あなたを支える、4つのサポート ============ -->
+<section class="s-ai">
+  <div class="wrap">
+    <div class="chapno">VII</div>
+    <div class="eyebrow lat">Four kinds of support</div>
+    <h2 class="lines"><span class="ln">あなたを支える、</span><br><span class="ln"><span class="gg">4つのサポート</span></span></h2>
+    <div class="gline"></div>
+
+    <div class="stag"><p class="lead-p tc">あなたが前に進めるように、<br>私が4つの方法で支えていくよ。</p></div>
+    <div class="orn" aria-hidden="true"><i></i></div>
+
+    <article class="dev rv">
+      <div class="no lat">I</div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 34h36M12 34a12 12 0 0 1 24 0"/><path d="M24 10v6M10.5 16.5l4 4M37.5 16.5l-4 4M4 26h5M39 26h5"/><path d="M14 40h20"/></svg></span>
+      <h3>①毎朝の<br>ヒーリングメッセージ</h3>
       <p>毎朝、あなたに合わせたメッセージを届けるよ。</p>
       <ul class="dots">
         <li>今日意識してほしいこと</li>
         <li>前向きに過ごすためのヒント</li>
       </ul>
-      <p class="support-close">迷わず一日を始められるように。</p>
+      <p class="close"><span class="mk">迷わず一日を始められるように。</span></p>
     </article>
 
-    <article class="support">
-      <header class="support-head">
-        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 24l7-11"/><path d="M24 7v4M24 37v4M7 24h4M37 24h4"/><circle cx="24" cy="24" r="2.2"/></svg>
-        <h3 class="support-title"><span class="num">②</span>流れの定期チェック</h3>
-      </header>
+    <article class="dev rv">
+      <div class="no lat">II</div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 24l7-11"/><path d="M24 7v4M24 37v4M7 24h4M37 24h4"/><circle cx="24" cy="24" r="2.2"/></svg></span>
+      <h3>②流れの定期チェック</h3>
       <p>本鑑定で視えた流れが、今どうなっているのかを定期的に確認するよ。</p>
       <ul class="dots">
         <li>今の流れの状態</li>
         <li>これから意識すべきこと</li>
       </ul>
-      <p class="support-close">一人では気づけない変化も、一緒に確認していこうね。</p>
+      <p class="close"><span class="mk">一人では気づけない変化も、一緒に確認していこうね。</span></p>
     </article>
 
-    <article class="support">
-      <header class="support-head">
-        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30c5-6 9-6 13 0s8 6 13 0 6-4 6-4"/><path d="M8 20c5-6 9-6 13 0s8 6 13 0 6-4 6-4"/><path d="M8 40c5-6 9-6 13 0s8 6 13 0"/></svg>
-        <h3 class="support-title"><span class="num">③</span>週1回の遠隔ヒーリング</h3>
-      </header>
+    <div class="ph wide px rv-s">
+      <img src="img/light45.jpg" width="900" height="1125" alt="木々の葉のあいだから差しこむ日の光" loading="lazy" decoding="async">
+    </div>
+
+    <article class="dev rv">
+      <div class="no lat">III</div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 30c5-6 9-6 13 0s8 6 13 0 6-4 6-4"/><path d="M8 20c5-6 9-6 13 0s8 6 13 0 6-4 6-4"/><path d="M8 40c5-6 9-6 13 0s8 6 13 0"/></svg></span>
+      <h3>③週1回の遠隔ヒーリング</h3>
       <p>週に1回、あなたの流れを整えるための遠隔ヒーリングを行うよ。</p>
-      <p class="support-close">継続して流れを整えていくための時間だよ。</p>
+      <p class="close"><span class="mk">継続して流れを整えていくための時間だよ。</span></p>
     </article>
 
-    <article class="support">
-      <header class="support-head">
-        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32v20H22l-8 7v-7H8z"/><path d="M15 20h18M15 25h11"/></svg>
-        <h3 class="support-title"><span class="num">④</span>LINEチャットサポート</h3>
-      </header>
-      <p class="support-lead">いつでも・何度でも相談できるよ。</p>
+    <article class="dev rv">
+      <div class="no lat">IV</div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h32v20H22l-8 7v-7H8z"/><path d="M15 20h18M15 25h11"/></svg></span>
+      <h3>④LINEチャットサポート</h3>
+      <p><strong>いつでも・何度でも相談できるよ。</strong></p>
       <ul class="dots">
         <li>不安でいっぱいになったとき</li>
         <li>誰かに話を聞いてほしいとき</li>
         <li>嬉しい変化があったとき</li>
       </ul>
-      <p>どんな小さなことでも、遠慮なく話してね。</p>
+      <p class="close"><span class="mk">どんな小さなことでも、遠慮なく話してね。</span></p>
     </article>
   </div>
 </section>
 
-<!-- ========== 09 サポートで変わっていく未来 ========== -->
-<section class="sec">
-  <h2 class="h2">サポートで<br>変わっていく未来</h2>
-  <p>一人で悩んでいた毎日から、<br>前を向ける毎日へ。</p>
+<div class="band" aria-hidden="true"></div>
 
-  <div class="ba" role="table" aria-label="これまでのあなたと、これから目指すあなた">
-    <div class="ba-row ba-headrow" role="row">
-      <p class="ba-before" role="columnheader">これまでのあなた</p>
-      <p class="ba-after" role="columnheader">これから目指すあなた</p>
+<!-- ============ VIII サポートで変わっていく未来 ============ -->
+<section class="s-plain">
+  <div class="wrap">
+    <div class="chapno">VIII</div>
+    <div class="eyebrow lat">Your future</div>
+    <h2 class="lines"><span class="ln">サポートで</span><br><span class="ln">変わっていく未来</span></h2>
+    <div class="gline"></div>
+
+    <div class="stag"><p class="lead-p tc">一人で悩んでいた毎日から、<br>前を向ける毎日へ。</p></div>
+
+    <div class="vs stag" role="table" aria-label="これまでのあなたと、これから目指すあなた">
+      <div class="r hd" role="row"><p class="c" role="columnheader">これまでのあなた</p><p class="c" role="columnheader">これから目指すあなた</p></div>
+      <div class="r" role="row"><p class="c" role="cell">不安を一人で抱え込む</p><p class="c tick" role="cell">相談できる安心感がある</p></div>
+      <div class="r" role="row"><p class="c" role="cell">どうすればいいか迷う</p><p class="c tick" role="cell">次の一歩が分かる</p></div>
+      <div class="r" role="row"><p class="c" role="cell">すぐに諦めてしまう</p><p class="c tick" role="cell">前向きに行動できる</p></div>
+      <div class="r" role="row"><p class="c" role="cell">変化に気づけない</p><p class="c tick" role="cell">変化を喜べる</p></div>
     </div>
-    <div class="ba-row" role="row"><p class="ba-before" role="cell">不安を一人で抱え込む</p><p class="ba-after" role="cell">相談できる安心感がある</p></div>
-    <div class="ba-row" role="row"><p class="ba-before" role="cell">どうすればいいか迷う</p><p class="ba-after" role="cell">次の一歩が分かる</p></div>
-    <div class="ba-row" role="row"><p class="ba-before" role="cell">すぐに諦めてしまう</p><p class="ba-after" role="cell">前向きに行動できる</p></div>
-    <div class="ba-row" role="row"><p class="ba-before" role="cell">変化に気づけない</p><p class="ba-after" role="cell">変化を喜べる</p></div>
-  </div>
 
-  <p class="shift"><span>「どうせ変わらない」から、</span><span class="shift-to">「私は変われる」へ。</span></p>
-  <figure class="photo photo-bleed">
-    <img src="img/future.jpg" width="1200" height="800" alt="木々の葉のあいだから差しこむ日の光" loading="lazy" decoding="async">
-  </figure>
-  <p><strong>毎日、前に進むことができる。</strong></p>
-  <p><strong>あなたが望む未来を、<br>もう諦めなくていいんだよ。</strong></p>
-  <p>そのために、私がそばで支えていくからね。</p>
-  <a class="minicta" href="#plans">プランと料金を見る<span>今だけ限定料金・特典付き</span></a>
+    <div class="big rv-b"><span class="s">「どうせ変わらない」から、</span><span class="g">「私は変われる」へ。</span></div>
+
+    <div class="ph-full px rv-s">
+      <img src="img/future45.jpg" width="900" height="1125" alt="朝の光が差す公園を歩いていく人" loading="lazy" decoding="async">
+      <div class="ov rv-b">毎日、<br>前に進むことができる。</div>
+    </div>
+
+    <div class="big rv-b"><span class="s">あなたが望む未来を、</span><span class="wipe">もう諦めなくて<br>いいんだよ。</span></div>
+    <div class="stag"><p class="tc">そのために、私がそばで支えていくからね。</p></div>
+
+    <a class="minicta rv" href="#plans">プランと料金を見る<span class="s">今だけ限定料金・特典付き</span></a>
+  </div>
 </section>
 
-<!-- ========== 10 サポートで変わっていった人たち ========== -->
-<section class="sec sec-tint" id="voices">
-  <h2 class="h2">サポートで<br>変わっていった人たち</h2>
-  <p>一人で悩んでいた方たちから、<br>嬉しい声が届いているよ。</p>
+<!-- ============ IX サポートで変わっていった人たち ============ -->
+<section class="s-ai" id="voices">
+  <div class="wrap">
+    <div class="chapno">IX</div>
+    <div class="eyebrow lat">Voices</div>
+    <h2 class="lines"><span class="ln">サポートで</span><br><span class="ln">変わっていった人たち</span></h2>
+    <div class="gline"></div>
 
-  <div class="voices">
-    <article class="voice">
-      <header class="voice-head">
-        <h3 class="voice-name">M様｜50代・お金の不安に悩んでいた方</h3>
-        <p class="voice-plan">2週間サポート（その後1か月プランへ延長）</p>
+    <div class="stag"><p class="lead-p tc">一人で悩んでいた方たちから、<br>嬉しい声が届いているよ。</p></div>
+
+    <article class="voice rv">
+      <header class="vh">
+        <span class="vno lat">01</span>
+        <h3 class="vname">M様｜50代・お金の不安に悩んでいた方</h3>
+        <p class="vplan">2週間サポート（その後1か月プランへ延長）</p>
       </header>
-      <p class="voice-label">サポートを受ける前のお悩み</p>
-      <p class="voice-before">お金の不安を家族にも相談できず、一人で抱え込んでしまっていました。<br>夜になると、不安が押し寄せてきて、お酒に逃げてしまうことが多かったんです。</p>
-      <p class="voice-arrow" aria-hidden="true"></p>
-      <p class="voice-label is-after">サポートを受けてからの変化</p>
-      <div class="voice-after">
-        <p>お金の不安が薄れていきました。<br>すると面白いことに、お金の使い方まで変わっていって、口座のお金が多く残るようになっていったんです。</p>
-        <p>金額も嬉しいですが、<br>「私、これからもっと良くなるかも」<br>と希望を持てたことがいちばん大きいです。</p>
+      <p class="vl">サポートを受ける前のお悩み</p>
+      <p class="vb">お金の不安を家族にも相談できず、一人で抱え込んでしまっていました。<br>夜になると、不安が押し寄せてきて、お酒に逃げてしまうことが多かったんです。</p>
+      <p class="varrow" aria-hidden="true"></p>
+      <p class="vl is-after">サポートを受けてからの変化</p>
+      <div class="va">
+        <p>お金の不安が薄れていきました。<br>すると面白いことに、お金の使い方まで変わっていって、<span class="mk">口座のお金が多く残るようになっていったんです。</span></p>
+        <p>金額も嬉しいですが、<br><strong>「私、これからもっと良くなるかも」</strong><br>と希望を持てたことがいちばん大きいです。</p>
       </div>
     </article>
 
-    <article class="voice">
-      <header class="voice-head">
-        <h3 class="voice-name">S様｜30代・恋愛で悩んでいた方</h3>
-        <p class="voice-plan">3か月サポート</p>
+    <article class="voice rv">
+      <header class="vh">
+        <span class="vno lat">02</span>
+        <h3 class="vname">S様｜30代・恋愛で悩んでいた方</h3>
+        <p class="vplan">3か月サポート</p>
       </header>
-      <p class="voice-label">サポートを受ける前のお悩み</p>
-      <p class="voice-before">片思いの相手との関係がまったく進まず、「もしかして避けられているのかも…」と、不安と焦りで胸がいっぱいになっていました。</p>
-      <p class="voice-arrow" aria-hidden="true"></p>
-      <p class="voice-label is-after">サポートを受けてからの変化</p>
-      <div class="voice-after">
-        <p>ゆきえ先生と毎日お話していくうちに心が軽くなり、彼との関わり方が変わったら、なんと彼の方から積極的に話しかけてくれるようになったんです。<br>サポートがちょうど終わるころに、向こうから告白してもらいました！<br>流れが変わると、ここまで変わるんだと驚いています。</p>
+      <p class="vl">サポートを受ける前のお悩み</p>
+      <p class="vb">片思いの相手との関係がまったく進まず、「もしかして避けられているのかも…」と、不安と焦りで胸がいっぱいになっていました。</p>
+      <p class="varrow" aria-hidden="true"></p>
+      <p class="vl is-after">サポートを受けてからの変化</p>
+      <div class="va">
+        <p>ゆきえ先生と毎日お話していくうちに心が軽くなり、彼との関わり方が変わったら、<span class="mk">なんと彼の方から積極的に話しかけてくれるようになったんです。</span><br>サポートがちょうど終わるころに、<strong>向こうから告白してもらいました！</strong><br>流れが変わると、ここまで変わるんだと驚いています。</p>
       </div>
     </article>
 
-    <article class="voice">
-      <header class="voice-head">
-        <h3 class="voice-name">I様｜40代・仕事で悩んでいた方</h3>
-        <p class="voice-plan">1か月サポート（その後3か月プランへ延長）</p>
+    <article class="voice rv">
+      <header class="vh">
+        <span class="vno lat">03</span>
+        <h3 class="vname">I様｜40代・仕事で悩んでいた方</h3>
+        <p class="vplan">1か月サポート（その後3か月プランへ延長）</p>
       </header>
-      <p class="voice-label">サポートを受ける前のお悩み</p>
-      <p class="voice-before">仕事の給料が低く、職場の人間関係も悪くて、毎日会社に行くのが本当に苦痛でした。<br>どうせ自分なんて…と、自分の選択にも全く自信が持てませんでした。</p>
-      <p class="voice-arrow" aria-hidden="true"></p>
-      <p class="voice-label is-after">サポートを受けてからの変化</p>
-      <div class="voice-after">
-        <p>ゆきえ先生から温かい助言をいただく中で、心がすーっと軽くなり、自分の選択に自信を持てるようになりました。<br>すると、ギクシャクしていた職場の人間関係が嘘のように良くなり始め、なんと昇進の話まで出てきたんです。<br>自分の内側が変わると、周りの現実もこんなに変わるんだと思い、延長させてもらいました。</p>
+      <p class="vl">サポートを受ける前のお悩み</p>
+      <p class="vb">仕事の給料が低く、職場の人間関係も悪くて、毎日会社に行くのが本当に苦痛でした。<br>どうせ自分なんて…と、自分の選択にも全く自信が持てませんでした。</p>
+      <p class="varrow" aria-hidden="true"></p>
+      <p class="vl is-after">サポートを受けてからの変化</p>
+      <div class="va">
+        <p>ゆきえ先生から温かい助言をいただく中で、心がすーっと軽くなり、自分の選択に自信を持てるようになりました。<br>すると、ギクシャクしていた職場の人間関係が嘘のように良くなり始め、<span class="mk">なんと昇進の話まで出てきたんです。</span><br>自分の内側が変わると、周りの現実もこんなに変わるんだと思い、延長させてもらいました。</p>
       </div>
     </article>
-  </div>
 
-  <!-- LINEチャットのスクリーンショット（画像は img/voices/ に置き、下の figure を足す・消すだけで差し替えできます） -->
-  <h3 class="h3 center shots-title">サポートを受けた他の方からの<br>嬉しい声はこちら</h3>
-  <p class="center">実際に届いたメッセージをご紹介するね。</p>
-  <div class="shots" data-shots>
-    <div class="shots-track" tabindex="0" aria-label="届いたLINEメッセージの画像（横にスワイプ）">
-      <figure class="shot"><button type="button" class="shot-btn"><img src="img/voices/voice1.jpg" width="813" height="1484" alt="サポートを受けた方から届いたLINEメッセージ（3か月）" loading="lazy" decoding="async"></button></figure>
-      <figure class="shot"><button type="button" class="shot-btn"><img src="img/voices/voice2.jpg" width="815" height="1507" alt="サポートを受けた方から届いたLINEメッセージ（収入）" loading="lazy" decoding="async"></button></figure>
-      <figure class="shot"><button type="button" class="shot-btn"><img src="img/voices/voice3.jpg" width="818" height="1802" alt="サポートを受けた方から届いたLINEメッセージ（昇給）" loading="lazy" decoding="async"></button></figure>
-      <figure class="shot"><button type="button" class="shot-btn"><img src="img/voices/voice4.jpg" width="820" height="1790" alt="サポートを受けた方から届いたLINEメッセージ（夫婦）" loading="lazy" decoding="async"></button></figure>
-      <figure class="shot"><button type="button" class="shot-btn"><img src="img/voices/voice5.jpg" width="548" height="1421" alt="サポートを受けた方から届いたLINEメッセージ（半年）" loading="lazy" decoding="async"></button></figure>
+    <div class="orn" aria-hidden="true"><i></i></div>
+    <h3 class="h3 tc rv">サポートを受けた他の方からの<br>嬉しい声はこちら</h3>
+    <div class="stag"><p class="tc">実際に届いたメッセージをご紹介するね。</p></div>
+
+    <!-- LINEのスクリーンショット（img/voices/ の画像。figure を足す・消すだけで差し替えできます） -->
+    <figure class="shot rv"><img src="img/voices/voice1.jpg" width="813" height="1484" alt="サポートを受けた方から届いたLINEメッセージ（3か月）" loading="lazy" decoding="async"></figure>
+    <figure class="shot rv"><img src="img/voices/voice2.jpg" width="815" height="1507" alt="サポートを受けた方から届いたLINEメッセージ（収入）" loading="lazy" decoding="async"></figure>
+    <a class="minicta rv" href="#plans">プランと料金を見る<span class="s">今だけ限定料金・特典付き</span></a>
+    <figure class="shot rv"><img src="img/voices/voice3.jpg" width="818" height="1802" alt="サポートを受けた方から届いたLINEメッセージ（昇給）" loading="lazy" decoding="async"></figure>
+    <figure class="shot rv"><img src="img/voices/voice4.jpg" width="820" height="1790" alt="サポートを受けた方から届いたLINEメッセージ（夫婦）" loading="lazy" decoding="async"></figure>
+    <figure class="shot rv"><img src="img/voices/voice5.jpg" width="548" height="1421" alt="サポートを受けた方から届いたLINEメッセージ（半年）" loading="lazy" decoding="async"></figure>
+
+    <div class="peak rv">
+      <div class="l2">次は、<br><em>あなたの番。</em></div>
+      <div class="l3">あなたが望む未来へ向かって、<br>私も一緒に歩んでいくよ。</div>
     </div>
-    <p class="shots-hint">横にスワイプ・タップで拡大</p>
-    <div class="shots-dots" aria-hidden="true"></div>
+
+    <a class="cta rv" href="#plans">
+      <span class="arrow" aria-hidden="true">▼</span>
+      <span class="btn">プランと料金を見る</span>
+      <span class="sub">▶ 今だけ限定料金・特典付き</span>
+    </a>
   </div>
-
-  <div class="your-turn">
-    <p class="your-turn-big">次は、あなたの番。</p>
-    <p>あなたが望む未来へ向かって、<br>私も一緒に歩んでいくよ。</p>
-  </div>  <a class="minicta" href="#plans">プランと料金を見る<span>今だけ限定料金・特典付き</span></a>
-
 </section>
 
-<!-- ========== 11 4つの伴走プラン ========== -->
-<section class="sec sec-plans" id="plans">
-  <div class="orn orn-tl" aria-hidden="true"></div>
-  <p class="plans-kicker">あなたの未来に合わせて選べる</p>
-  <h2 class="h2 center">4つの伴走プラン</h2>
-  <p>どのプランでも、あなたの流れを整えながら、理想の未来へ向かって伴走していくよ。</p>
-  <p>違うのは、<br><strong>どれだけ長く、流れを整えながら<br>前へ進んでいけるか。</strong></p>
-  <p>あなたが望む未来に合わせて選んでね。</p>
+<!-- ============ X 4つの伴走プラン ============ -->
+<section class="s-plans" id="plans" data-sticky-hide>
+  <div class="plans-orn" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="chapno">X</div>
+    <div class="eyebrow lat">Four plans</div>
+    <p class="kicker rv">あなたの未来に合わせて選べる</p>
+    <h2 class="lines"><span class="ln"><span class="gg">4つの伴走プラン</span></span></h2>
+    <div class="gline"></div>
 
-  <!-- 今だけ限定（ご依頼の追加表記） -->
-  <div class="limit-box">
-    <p class="limit-box-head"><span class="tag-red">今だけ限定料金</span></p>
-    <div class="cd cd-lg" data-countdown>
-      <span class="cd-label">限定料金の残り時間</span>
-      <span class="cd-time"><b data-d>3</b><i>日</i><b data-h>00</b><i>時間</i><b data-m>00</b><i>分</i><b data-s>00</b><i>秒</i></span>
+    <div class="stag">
+      <p class="tc">どのプランでも、あなたの流れを整えながら、理想の未来へ向かって伴走していくよ。</p>
     </div>
-    <p class="cd-expired" hidden>限定期間は終了しました。</p>
-    <p class="stock"><span>今月の伴走枠</span><b>残りわずか</b></p>
-  </div>
+    <div class="quote stag">
+      <p>違うのは、<br>どれだけ長く、<br>流れを整えながら<br><strong>前へ進んでいけるか。</strong></p>
+    </div>
+    <div class="stag"><p class="tc">あなたが望む未来に合わせて選んでね。</p></div>
 
-  <div class="gift">
-    <p class="gift-now">《今だけ》</p>
-    <p class="gift-kind">特別特典</p>
-    <h3 class="gift-title">《魂流開運の待ち受け》</h3>
-    <p class="gift-price"><s>通常9,800円</s><span class="gift-arrow">→</span><b>無料プレゼント</b></p>
-    <p>あらゆる運気の流れを整えるための特別な開運待ち受け画像。</p>
-    <p>通常9,800円で提供しているものなんだけど、今回は特別に無料でプレゼントするよ。</p>
-    <p>鑑定で視えたあなたの運気の流れに合わせて、今のあなたに必要な開運待ち受けを選んでお渡しするね。</p>
-    <p>毎日目にするスマホの待ち受けとして、理想の未来へ向かうための御守りにしてね。</p>
-  </div>
+    <!-- 伴走期間の比べ（PLANS から作る） -->
+    <div class="depthbar rv" data-depth aria-hidden="true"></div>
 
-  <!-- プランの中身は main.js の PLANS を1か所だけ直せば、ここと最後の申し込みエリアの両方に反映されます -->
-  <div class="plans" data-plans></div>
-  <noscript>
-    <ul class="noscript-plans">
-      <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae81495a77b41544cc1b220" target="_blank" rel="noopener">2週間プランを申し込む（14,900円）</a></li>
-      <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae818c6e647ea9c95045003" target="_blank" rel="noopener">1か月プランを申し込む（39,800円）</a></li>
-      <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae8191ab6bf8e73c0d0a157" target="_blank" rel="noopener">3か月プランを申し込む（99,800円）</a></li>
-      <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae81972905a76b74d9d9543" target="_blank" rel="noopener">6か月プランを申し込む（159,800円）</a></li>
+    <!-- 今だけ限定（ご依頼の追加表記） -->
+    <div class="limbox rv">
+      <span class="lt">今だけ限定料金</span>
+      <p class="lh">限定料金の<span class="g">残り時間</span></p>
+      <div class="cd" data-countdown aria-label="限定料金の残り時間">
+        <div class="u"><b data-d>3</b><i>日</i></div><div class="sep">:</div>
+        <div class="u"><b data-h>00</b><i>時間</i></div><div class="sep">:</div>
+        <div class="u"><b data-m>00</b><i>分</i></div><div class="sep">:</div>
+        <div class="u s"><b data-s>00</b><i>秒</i></div>
+      </div>
+      <p class="cd-expired" hidden>限定期間は終了しました。</p>
+      <div class="stock">
+        <div class="sl"><span>今月の伴走枠</span><b>残りわずか</b></div>
+        <div class="bar"><i style="--fill:90%"></i></div>
+      </div>
+    </div>
+
+    <!-- 今だけ特典 -->
+    <div class="bonus rv">
+      <span class="bt">《今だけ》特別特典</span>
+      <p class="bh">《魂流開運の待ち受け》</p>
+      <p class="bw"><s>通常9,800円</s></p>
+      <p class="bfree">無料プレゼント</p>
+      <p>あらゆる運気の流れを整えるための特別な開運待ち受け画像。</p>
+      <p>通常9,800円で提供しているものなんだけど、<strong>今回は特別に無料でプレゼントするよ。</strong></p>
+      <p>鑑定で視えたあなたの運気の流れに合わせて、今のあなたに必要な開運待ち受けを選んでお渡しするね。</p>
+      <p>毎日目にするスマホの待ち受けとして、理想の未来へ向かうための御守りにしてね。</p>
+    </div>
+
+    <div class="breath" aria-hidden="true"><i></i></div>
+
+    <!-- プランの中身は main.js の PLANS を1か所だけ直せば、ここと最後の申し込みエリアの両方に反映されます -->
+    <div class="plans" data-plans></div>
+    <noscript>
+      <ul class="noscript-plans">
+        <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae81495a77b41544cc1b220" target="_blank" rel="noopener">2週間プランを申し込む（14,900円）</a></li>
+        <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae818c6e647ea9c95045003" target="_blank" rel="noopener">1か月プランを申し込む（39,800円）</a></li>
+        <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae8191ab6bf8e73c0d0a157" target="_blank" rel="noopener">3か月プランを申し込む（99,800円）</a></li>
+        <li><a href="https://tamashiimichibikinok.stores.jp/items/6ae81972905a76b74d9d9543" target="_blank" rel="noopener">6か月プランを申し込む（159,800円）</a></li>
+      </ul>
+    </noscript>
+    <p class="note">※比較ゲージは伴走期間の比較イメージであり、効果の強さを示すものではないよ。<br>※ヒーリング回数は週1回を基準にした目安だよ。</p>
+  </div>
+</section>
+
+<!-- ============ XI どのプランを選べばいいか迷ったら ============ -->
+<section class="s-plain">
+  <div class="wrap">
+    <div class="chapno">XI</div>
+    <div class="eyebrow lat">Which one</div>
+    <h2 class="lines"><span class="ln">どのプランを</span><br><span class="ln">選べばいいか迷ったら</span></h2>
+    <div class="gline"></div>
+
+    <dl class="choose stag">
+      <div class="row"><dt>2週間</dt><dd>まずは今の流れを整えたいあなたへ。</dd></div>
+      <div class="row"><dt>1か月</dt><dd>良い流れを育てていきたいあなたへ。</dd></div>
+      <div class="row rec"><dt>3か月</dt><dd>繰り返す悩みを乗り越え、理想の未来へ進みたいあなたへ。<span class="rec-note">迷ったら、3か月の伴走サポートがおすすめだよ。</span></dd></div>
+      <div class="row"><dt>6か月</dt><dd>これからの人生を長い目で整え、良い流れを自分のものにしたいあなたへ。</dd></div>
+    </dl>
+
+    <div class="big rv-b"><span class="s">大切なのは、</span>あなたがどんな未来を<br><span class="wipe">望んでいるか。</span></div>
+    <div class="stag"><p class="tc">あなたに合った期間を選んでね。</p></div>
+  </div>
+</section>
+
+<!-- ============ XII こんなあなたに、サポートを受けてほしい ============ -->
+<section class="s-ai">
+  <div class="wrap">
+    <div class="chapno">XII</div>
+    <div class="eyebrow lat">For you</div>
+    <h2 class="lines"><span class="ln">こんなあなたに、</span><br><span class="ln">サポートを</span><br><span class="ln">受けてほしい</span></h2>
+    <div class="gline"></div>
+
+    <div class="stag"><p class="lead-p tc">一つでも当てはまるなら、<br>私を頼ってほしいの。</p></div>
+    <ul class="chk" data-checks>
+      <li>本鑑定で視えた未来へ、本気で進みたい</li>
+      <li>何度も同じ悩みを繰り返している</li>
+      <li>一人では不安になってしまう</li>
+      <li>今度こそ、人生の流れを変えたい</li>
+      <li>自分に合った導きを受けながら進みたい</li>
+      <li>理想の未来を、もう諦めたくない</li>
     </ul>
-  </noscript>
-  <p class="note">※比較ゲージは伴走期間の比較イメージであり、効果の強さを示すものではないよ。<br>※ヒーリング回数は週1回を基準にした目安だよ。</p>
-</section>
 
-<!-- ========== 12 どのプランを選べばいいか迷ったら ========== -->
-<section class="sec">
-  <h2 class="h2">どのプランを<br>選べばいいか迷ったら</h2>
-  <dl class="choose">
-    <div class="choose-row"><dt>2週間</dt><dd>まずは今の流れを整えたいあなたへ。</dd></div>
-    <div class="choose-row"><dt>1か月</dt><dd>良い流れを育てていきたいあなたへ。</dd></div>
-    <div class="choose-row is-rec"><dt>3か月</dt><dd>繰り返す悩みを乗り越え、理想の未来へ進みたいあなたへ。<span class="choose-rec">迷ったら、3か月の伴走サポートがおすすめだよ。</span></dd></div>
-    <div class="choose-row"><dt>6か月</dt><dd>これからの人生を長い目で整え、良い流れを自分のものにしたいあなたへ。</dd></div>
-  </dl>
-  <p><strong>大切なのは、<br>あなたがどんな未来を望んでいるか。</strong></p>
-  <p>あなたに合った期間を選んでね。</p>
-</section>
+    <div class="big xl rv-b"><span class="g">今度こそ、<br>変わりたい。</span></div>
+    <div class="stag"><p class="tc">その気持ちがあるなら、<br>私はあなたの力になりたい。</p></div>
+    <div class="quote stag">
+      <p>これからは、<br>一人で頑張らなくて<br>いいんだよ。</p>
+    </div>
 
-<!-- ========== 13 こんなあなたに、サポートを受けてほしい ========== -->
-<section class="sec sec-tint">
-  <h2 class="h2">こんなあなたに、<br>サポートを受けてほしい</h2>
-  <p>一つでも当てはまるなら、<br>私を頼ってほしいの。</p>
-  <ul class="checks" data-checks>
-    <li>本鑑定で視えた未来へ、本気で進みたい</li>
-    <li>何度も同じ悩みを繰り返している</li>
-    <li>一人では不安になってしまう</li>
-    <li>今度こそ、人生の流れを変えたい</li>
-    <li>自分に合った導きを受けながら進みたい</li>
-    <li>理想の未来を、もう諦めたくない</li>
-  </ul>
-  <p><strong class="big">今度こそ、変わりたい。</strong></p>
-  <p>その気持ちがあるなら、<br>私はあなたの力になりたい。</p>
-  <p><strong>これからは、<br>一人で頑張らなくていいんだよ。</strong></p>
-</section>
-
-<!-- ========== 14 よくあるご質問 ========== -->
-<section class="sec">
-  <h2 class="h2">よくあるご質問</h2>
-  <p>申し込む前の不安にも、<br>一つずつ答えるね。</p>
-  <div class="faq">
-    <details>
-      <summary>本当に変われるのか不安です。</summary>
-      <div class="faq-a"><p>不安になるよね。<br>でも、これからは一人で頑張らなくて大丈夫。<br>毎日のメッセージや相談を通じて、前に進むための行動を一緒に考えていくよ。<br>変化の感じ方には個人差があるけれど、あなたの気持ちに寄り添って支えていくね。</p></div>
-    </details>
-    <details>
-      <summary>毎日連絡する必要はある？</summary>
-      <div class="faq-a"><p>毎日連絡する必要はないよ。<br>話したいときや、不安になったときに連絡してくれれば大丈夫。<br>自分のペースで利用してね。</p></div>
-    </details>
-    <details>
-      <summary>どんな悩みでも相談していい？</summary>
-      <div class="faq-a"><p>恋愛、お金、仕事、人間関係など、今のあなたが抱えている悩みを聞かせてね。<br>小さなことでも大丈夫だよ。<br>ただし、医療や法律など専門的な判断が必要なことは、専門家にも相談してね。</p></div>
-    </details>
-    <details>
-      <summary>本鑑定を受けたばかりだけど、すぐ申し込んだ方がいい？</summary>
-      <div class="faq-a"><p>本鑑定を読んで、これから前に進みたいと思ったときが始めるきっかけになるよ。<br>今の気持ちを大切にしながら、自分に合ったタイミングで選んでね。</p></div>
-    </details>
-    <details>
-      <summary>サポート期間が終わった後も延長できる？</summary>
-      <div class="faq-a"><p>もちろんできるよ。<br>2週間から1か月や3か月に変更したり、3か月が終わった後にもう一度申し込んだりすることもできるよ。</p></div>
-    </details>
-    <details>
-      <summary>家族や友人に知られない？</summary>
-      <div class="faq-a"><p>やり取りは基本的にLINEで行うよ。<br>こちらから家族や友人に連絡することはないからね。<br>ただし、スマートフォンの通知や購入履歴は、端末の設定によって見える場合があるので確認してね。</p></div>
-    </details>
+    <a class="cta rv" href="#plans">
+      <span class="arrow" aria-hidden="true">▼</span>
+      <span class="btn">プランと料金を見る</span>
+      <span class="sub">▶ 今だけ限定料金・特典付き</span>
+    </a>
   </div>
 </section>
 
-<!-- ========== 15 最後に ========== -->
-<section class="sec sec-letter">
-  <figure class="photo photo-bleed photo-wide">
-    <img src="img/path.jpg" width="1400" height="787" alt="朝の光が差す並木道を歩いていく人" loading="lazy" decoding="async">
-  </figure>
-  <div class="letter">
-    <h2 class="h2">最後に</h2>
-    <p>ここまで読んでくれて、ありがとう。</p>
-    <p>あなたはこれまで、<br>何度も悩んで、迷って、<br>それでも幸せになりたいと<br>願ってきたんだと思う。</p>
-    <p>でもね。</p>
-    <p><strong class="big">もう、一人で<br>頑張らなくていいんだよ。</strong></p>
-    <p>本鑑定で知った、あなたの流れ。<br>そして、あなたが本当に望んでいる未来。</p>
-    <p>その未来へ向かって、<br>これからは私がそばで支えていくよ。</p>
-    <p>不安になったら、いつでも話してね。<br>迷ったら、一緒に進む道を考えよう。<br>嬉しいことがあったら、一緒に喜ぼう。</p>
-    <p><strong>あなたの人生は、これからも変えていける。</strong></p>
-    <p><strong>今度は、一緒に理想の未来へ<br>進んでいこうね。</strong></p>
-    <p class="sign">ゆきえ</p>
+<!-- ============ XIII よくあるご質問 ============ -->
+<section class="s-plain">
+  <div class="wrap">
+    <div class="chapno">XIII</div>
+    <div class="eyebrow lat">Questions</div>
+    <h2 class="lines"><span class="ln">よくあるご質問</span></h2>
+    <div class="gline"></div>
+
+    <div class="stag"><p class="tc">申し込む前の不安にも、<br>一つずつ答えるね。</p></div>
+    <div class="faqs rv">
+      <details class="faq">
+        <summary><span class="qm">Q</span>本当に変われるのか不安です。</summary>
+        <div class="ans"><p>不安になるよね。<br>でも、これからは一人で頑張らなくて大丈夫。<br>毎日のメッセージや相談を通じて、前に進むための行動を一緒に考えていくよ。<br>変化の感じ方には個人差があるけれど、あなたの気持ちに寄り添って支えていくね。</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="qm">Q</span>毎日連絡する必要はある？</summary>
+        <div class="ans"><p>毎日連絡する必要はないよ。<br>話したいときや、不安になったときに連絡してくれれば大丈夫。<br>自分のペースで利用してね。</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="qm">Q</span>どんな悩みでも相談していい？</summary>
+        <div class="ans"><p>恋愛、お金、仕事、人間関係など、今のあなたが抱えている悩みを聞かせてね。<br>小さなことでも大丈夫だよ。<br>ただし、医療や法律など専門的な判断が必要なことは、専門家にも相談してね。</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="qm">Q</span>本鑑定を受けたばかりだけど、すぐ申し込んだ方がいい？</summary>
+        <div class="ans"><p>本鑑定を読んで、これから前に進みたいと思ったときが始めるきっかけになるよ。<br>今の気持ちを大切にしながら、自分に合ったタイミングで選んでね。</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="qm">Q</span>サポート期間が終わった後も延長できる？</summary>
+        <div class="ans"><p>もちろんできるよ。<br>2週間から1か月や3か月に変更したり、3か月が終わった後にもう一度申し込んだりすることもできるよ。</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="qm">Q</span>家族や友人に知られない？</summary>
+        <div class="ans"><p>やり取りは基本的にLINEで行うよ。<br>こちらから家族や友人に連絡することはないからね。<br>ただし、スマートフォンの通知や購入履歴は、端末の設定によって見える場合があるので確認してね。</p></div>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- ========== 16 最終申し込みエリア ========== -->
-<section class="sec sec-final" id="apply">
-  <div class="orn orn-br" aria-hidden="true"></div>
-  <p class="final-brand">魂流開導・専属伴走サポート</p>
-  <h2 class="h2 center final-title">あなたの未来へ、<br>ここから。</h2>
-  <p class="center">あなたに合った期間を選んでね。</p>
-  <div class="cd cd-final" data-countdown>
-    <span class="cd-label"><span class="tag-red">今だけ限定料金</span> 残り</span>
-    <span class="cd-time"><b data-d>3</b><i>日</i><b data-h>00</b><i>時間</i><b data-m>00</b><i>分</i><b data-s>00</b><i>秒</i></span>
+<!-- ============ XIV 最後に ============ -->
+<section class="s-ai-r">
+  <div class="wrap">
+    <div class="chapno">XIV</div>
+    <div class="eyebrow lat">A letter</div>
+    <h2 class="lines"><span class="ln">最後に</span></h2>
+    <div class="gline"></div>
+
+    <div class="ph wide px rv-s">
+      <img src="img/path.jpg" width="1400" height="787" alt="朝の光が差す並木道を歩いていく人" loading="lazy" decoding="async">
+    </div>
+
+    <div class="letter">
+      <div class="stag">
+        <p class="lead-p">ここまで読んでくれて、ありがとう。</p>
+        <p>あなたはこれまで、<br>何度も悩んで、迷って、<br>それでも幸せになりたいと<br>願ってきたんだと思う。</p>
+        <p>でもね。</p>
+      </div>
+      <div class="big rv-b">もう、一人で<br><span class="wipe">頑張らなくて<br>いいんだよ。</span></div>
+      <div class="stag">
+        <p>本鑑定で知った、あなたの流れ。<br>そして、あなたが本当に望んでいる未来。</p>
+        <p>その未来へ向かって、<br>これからは私がそばで支えていくよ。</p>
+        <p>不安になったら、いつでも話してね。<br>迷ったら、一緒に進む道を考えよう。<br>嬉しいことがあったら、一緒に喜ぼう。</p>
+      </div>
+      <div class="quote stag">
+        <p>あなたの人生は、<br>これからも変えていける。</p>
+        <p>今度は、一緒に<br><strong>理想の未来へ進んでいこうね。</strong></p>
+      </div>
+      <p class="sign rv">ゆきえ</p>
+    </div>
   </div>
-  <p class="cd-expired" hidden>限定期間は終了しました。</p>
-  <div class="final-list" data-final></div>
-  <p class="final-gift">《今だけ》特別特典《魂流開運の待ち受け》<br>通常9,800円 → 無料プレゼント</p>
+</section>
+
+<!-- ============ 最終申し込みエリア ============ -->
+<section class="s-final" id="apply" data-sticky-hide>
+  <div class="final-orn" aria-hidden="true"></div>
+  <div class="particles" data-particles="14" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="final-brand rv">魂流開導・専属伴走サポート</p>
+    <h2 class="lines"><span class="ln">あなたの未来へ、</span><br><span class="ln"><span class="gg">ここから。</span></span></h2>
+    <div class="gline"></div>
+    <p class="tc rv">あなたに合った期間を選んでね。</p>
+
+    <div class="limbox dark rv">
+      <span class="lt">今だけ限定料金</span>
+      <div class="cd" data-countdown aria-label="限定料金の残り時間">
+        <div class="u"><b data-d>3</b><i>日</i></div><div class="sep">:</div>
+        <div class="u"><b data-h>00</b><i>時間</i></div><div class="sep">:</div>
+        <div class="u"><b data-m>00</b><i>分</i></div><div class="sep">:</div>
+        <div class="u s"><b data-s>00</b><i>秒</i></div>
+      </div>
+      <p class="cd-expired" hidden>限定期間は終了しました。</p>
+      <div class="stock">
+        <div class="sl"><span>今月の伴走枠</span><b>残りわずか</b></div>
+        <div class="bar"><i style="--fill:90%"></i></div>
+      </div>
+    </div>
+
+    <div class="final-list" data-final></div>
+    <p class="final-gift rv">《今だけ》特別特典《魂流開運の待ち受け》<br><s>通常9,800円</s> → <b>無料プレゼント</b></p>
+  </div>
 </section>
 
 <footer class="footer">
@@ -442,18 +645,14 @@
   <p><a href="https://tamashiimichibikinok.stores.jp/tokushoho" target="_blank" rel="noopener">特定商取引法に基づく表示</a></p>
 </footer>
 
-</main>
-
-<!-- 画面の下に出る小さな帯（申し込みエリアが見えている間は隠れる） -->
-<div class="stickybar" data-sticky aria-hidden="true">
-  <p class="stickybar-text"><span class="stickybar-hot">残りわずか</span>限定料金 <span class="stickybar-cd" data-mini>--</span></p>
-  <a class="stickybar-btn" href="#plans" tabindex="-1">プランを見る</a>
+<!-- 画面の下に出る帯（プランと申し込みエリアが見えている間は隠れる） -->
+<div class="sticky" data-sticky aria-hidden="true">
+  <p class="lab"><span class="hot">残りわずか</span>今だけ限定料金<span class="cdmini" data-mini></span></p>
+  <div class="row">
+    <div class="pricebox" data-sticky-price></div>
+    <a href="#plans" tabindex="-1">プランを選ぶ</a>
+  </div>
 </div>
-
-<dialog class="lightbox" data-lightbox aria-label="画像の拡大">
-  <img alt="" data-lightbox-img>
-  <button type="button" class="lightbox-close" data-lightbox-close aria-label="閉じる">閉じる</button>
-</dialog>
 
 <script src="main.js" defer></script>
 </body>

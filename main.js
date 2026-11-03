@@ -1,26 +1,26 @@
 /* 魂流開導・専属伴走サポート LP
-   ★プランの料金・URL・文言はこの PLANS だけを直す（プラン欄と最後の申し込みエリアの両方に出ます） */
+   ★プランの料金・URL・文言はこの PLANS だけを直す（冒頭の限定料金・期間の比べ・プラン欄・最後の申し込みエリア・下の帯に出ます） */
 const PLANS = [
   {
-    key: '2w', name: '2週間プラン', term: '14日間', gauge: 1, healing: '約2回',
+    key: '2w', name: '2週間プラン', short: '2週間', lat: '14 DAYS', term: '14日間', gauge: 1, healing: 2,
     goal: '今の乱れた流れを整え始める', desc: '不安や迷いを軽くして、前向きな毎日へ。',
     regular: '29,800', price: '14,900',
     url: 'https://tamashiimichibikinok.stores.jp/items/6ae81495a77b41544cc1b220'
   },
   {
-    key: '1m', name: '1か月プラン', term: '1か月', gauge: 3, healing: '約4回',
+    key: '1m', name: '1か月プラン', short: '1か月', lat: '1 MONTH', term: '1か月', gauge: 3, healing: 4,
     goal: '良い流れを育てる', desc: '同じ悩みに振り回されず、理想へ向かって動き始める。',
     regular: '69,800', price: '39,800',
     url: 'https://tamashiimichibikinok.stores.jp/items/6ae818c6e647ea9c95045003'
   },
   {
-    key: '3m', name: '3か月プラン', term: '3か月', gauge: 6, healing: '約13回',
+    key: '3m', name: '3か月プラン', short: '3か月', lat: '3 MONTHS', term: '3か月', gauge: 6, healing: 13,
     goal: '理想の未来へ進む', desc: '繰り返す悩みを乗り越え、望む幸せに近づく。',
     regular: '149,800', price: '99,800', recommended: true,
     url: 'https://tamashiimichibikinok.stores.jp/items/6ae8191ab6bf8e73c0d0a157'
   },
   {
-    key: '6m', name: '6か月プラン', term: '6か月', gauge: 10, healing: '約26回',
+    key: '6m', name: '6か月プラン', short: '6か月', lat: '6 MONTHS', term: '6か月', gauge: 10, healing: 26,
     goal: '理想の流れを自分のものにする', desc: '過去の悩みに縛られず、幸せを選び続けられる自分へ。',
     regular: '259,800', price: '159,800', deal: '3か月プラン2回分より39,800円お得',
     url: 'https://tamashiimichibikinok.stores.jp/items/6ae81972905a76b74d9d9543'
@@ -33,6 +33,7 @@ const DEADLINE_KEY = 'konryu_bansou_first_open_v1';
 
 document.documentElement.classList.add('js');
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const HAS_IO = 'IntersectionObserver' in window;
 
 function el(tag, cls, html) {
   const e = document.createElement(tag);
@@ -41,37 +42,52 @@ function el(tag, cls, html) {
   return e;
 }
 
+/* ---- 冒頭の限定料金の一覧 ---- */
+function renderLimitPrices() {
+  document.querySelectorAll('[data-limit-prices]').forEach(box => {
+    box.innerHTML = PLANS.map(p => `${p.short} <b>${p.price}円</b>`)
+      .reduce((s, x, i) => s + (i === 0 ? '' : i % 2 ? '　／　' : '<br>') + x, '');
+  });
+}
+
+/* ---- 伴走期間の比べ ---- */
+function renderDepth() {
+  const box = document.querySelector('[data-depth]');
+  if (!box) return;
+  box.innerHTML = '<p class="ttl">伴走期間と遠隔ヒーリングの回数</p>' + PLANS.map(p => `
+    <div class="row${p.recommended ? ' rec' : ''}">
+      <div class="nm">${p.short}</div>
+      <div class="bar"><i style="--w:${Math.max(p.gauge * 10, 18)}%"></i><b>ヒーリング約${p.healing}回</b></div>
+    </div>`).join('') + '<div class="scale"><div></div><div><span>短い</span><span>長い</span></div></div>';
+}
+
 /* ---- プランのカード ---- */
 function renderPlans() {
   const box = document.querySelector('[data-plans]');
   if (!box) return;
   PLANS.forEach(p => {
-    const card = el('article', 'plan rv' + (p.recommended ? ' is-rec' : ''));
+    const card = el('article', 'plan rv' + (p.recommended ? ' rec' : ''));
     card.id = 'plan-' + p.key;
-    const segs = Array.from({ length: 10 }, (_, i) => `<i${i < p.gauge ? ' class="on"' : ''}></i>`).join('');
+    const rings = Array.from({ length: 10 }, (_, i) => `<i${i < p.gauge ? ' data-f' : ''}></i>`).join('');
     card.innerHTML = `
-      ${p.recommended ? '<p class="plan-ribbon">おすすめプラン</p>' : ''}
-      <h3 class="plan-name">${p.name}</h3>
-      <p class="plan-term">伴走期間：${p.term}</p>
-      <p class="plan-goal">${p.goal}</p>
-      <p class="plan-desc">${p.desc}</p>
-      <div class="plan-meta">
-        <div class="plan-meta-row">
-          <span class="plan-meta-label">継続期間</span>
-          <span class="gauge" role="img" aria-label="比較ゲージ 10段階中${p.gauge}">${segs}</span>
-          <span class="gauge-num">${p.gauge}/10</span>
-        </div>
-        <div class="plan-meta-row plan-heal">
-          <span class="plan-meta-label">遠隔ヒーリング</span><b>${p.healing}</b>
-        </div>
+      ${p.recommended ? '<p class="badge">おすすめプラン</p>' : ''}
+      <p class="pterm">${p.lat}</p>
+      <h3 class="pname">${p.name}</h3>
+      <p class="pperiod">伴走期間：${p.term}</p>
+      <p class="was">通常 <s>${p.regular}円</s></p>
+      <p class="limtag">今だけ限定料金</p>
+      <p class="price">${p.price}<small>円</small></p>
+      ${p.deal ? `<p class="deal">${p.deal}</p>` : ''}
+      <p class="goal">${p.goal}</p>
+      <p class="desc">${p.desc}</p>
+      <div class="wave" role="img" aria-label="継続期間の比較ゲージ 10段階中${p.gauge}">
+        <p class="lbl">継続期間（比較ゲージ）</p>
+        <div class="rings">${rings}</div>
+        <p class="cnt"><b>${p.gauge}</b>/ 10</p>
       </div>
-      <p class="plan-price">
-        <span class="plan-regular">通常<s>${p.regular}円</s></span>
-        <span class="plan-limited">今だけ限定料金</span><span class="plan-yen">${p.price}<small>円</small></span>
-      </p>
-      ${p.deal ? `<p class="plan-deal">${p.deal}</p>` : ''}
-      <p class="plan-gift">《今だけ》特別特典<br>《魂流開運の待ち受け》無料プレゼント</p>
-      <a class="btn" href="${p.url}" target="_blank" rel="noopener">${p.name}を申し込む</a>`;
+      <p class="heal">遠隔ヒーリング<b>約<span data-count="${p.healing}">${p.healing}</span>回</b></p>
+      <p class="gift">《今だけ》特別特典《魂流開運の待ち受け》無料プレゼント</p>
+      <a class="pbtn" href="${p.url}" target="_blank" rel="noopener">${p.name}を申し込む${p.recommended ? '<span class="s">迷ったら、3か月の伴走サポートがおすすめだよ。</span>' : ''}</a>`;
     box.appendChild(card);
   });
 }
@@ -81,7 +97,7 @@ function renderFinal() {
   const box = document.querySelector('[data-final]');
   if (!box) return;
   PLANS.forEach(p => {
-    const a = el('a', 'final-btn' + (p.recommended ? ' is-rec' : ''));
+    const a = el('a', 'final-btn rv' + (p.recommended ? ' is-rec' : ''));
     a.href = p.url;
     a.target = '_blank';
     a.rel = 'noopener';
@@ -92,6 +108,13 @@ function renderFinal() {
     a.setAttribute('aria-label', `${p.name}を申し込む（${p.price}円）`);
     box.appendChild(a);
   });
+}
+
+/* ---- 下の帯の値段（おすすめのプラン） ---- */
+function renderStickyPrice() {
+  const box = document.querySelector('[data-sticky-price]');
+  const rec = PLANS.find(p => p.recommended) || PLANS[0];
+  if (box) box.innerHTML = `<span class="p">${rec.price}<small>円</small></span><span class="n">${rec.name}（おすすめ）</span>`;
 }
 
 /* ---- カウントダウン ---- */
@@ -134,93 +157,35 @@ function startCountdown() {
   tick();
 }
 
-/* ---- スクショの横スワイプ・拡大 ---- */
-function setupShots() {
-  const wrap = document.querySelector('[data-shots]');
-  if (!wrap) return;
-  const track = wrap.querySelector('.shots-track');
-  const shots = Array.from(track.querySelectorAll('.shot'));
-  const dots = wrap.querySelector('.shots-dots');
-  shots.forEach(() => dots.appendChild(el('i')));
-  const dotEls = Array.from(dots.children);
-  function update() {
-    const mid = track.scrollLeft + track.clientWidth / 2;
-    let best = 0, bestDist = Infinity;
-    shots.forEach((s, i) => {
-      const c = s.offsetLeft + s.offsetWidth / 2;
-      const dist = Math.abs(c - mid);
-      if (dist < bestDist) { bestDist = dist; best = i; }
-    });
-    dotEls.forEach((d, i) => d.classList.toggle('on', i === best));
-  }
-  track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
-  update();
-
-  const dlg = document.querySelector('[data-lightbox]');
-  const big = dlg && dlg.querySelector('[data-lightbox-img]');
-  if (!dlg || typeof dlg.showModal !== 'function') return;
-  track.querySelectorAll('.shot-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const img = btn.querySelector('img');
-      big.src = img.currentSrc || img.src;
-      big.alt = img.alt;
-      dlg.showModal();
-    });
-  });
-  dlg.querySelector('[data-lightbox-close]').addEventListener('click', () => dlg.close());
-  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-}
-
-/* ---- 下の帯：ファーストビューを過ぎたら出し、プランと申し込みエリアが見えている間は隠す ---- */
-function setupSticky() {
-  const bar = document.querySelector('[data-sticky]');
-  if (!bar || !('IntersectionObserver' in window)) return;
-  const fv = document.querySelector('.fv');
-  const hideAreas = [document.getElementById('plans'), document.getElementById('apply')];
-  let pastFv = false;
-  const visible = new Set();
-  const sync = () => {
-    const show = pastFv && visible.size === 0;
-    bar.classList.toggle('show', show);
-    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-    bar.querySelector('a').tabIndex = show ? 0 : -1;
-  };
-  new IntersectionObserver(([e]) => { pastFv = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(fv);
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
-    sync();
-  }, { rootMargin: '0px 0px -20% 0px' });
-  hideAreas.forEach(a => a && io.observe(a));
-}
-
-/* ---- ふわっと出る ---- */
+/* ---- 見えたら on を付ける（ふわっと出る・1行ずつ・下線・グラフ・バー） ---- */
 function setupReveal() {
-  const targets = document.querySelectorAll('.h2, .photo, .compare, .support, .voice, .ba, .gift, .limit-box, .plan, .checks, .faq, .final-list, .wipe, .minicta');
-  if (REDUCE || !('IntersectionObserver' in window)) { targets.forEach(t => t.classList.add('in')); return; }
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  targets.forEach(t => { t.classList.add('rv'); io.observe(t); });
+  const targets = document.querySelectorAll('.rv,.rv-s,.rv-b,.stag,.lines,.eyebrow,h2,.wipe,.limbox,.depthbar,.graph');
+  if (REDUCE || !HAS_IO) { targets.forEach(t => t.classList.add('on')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(t => io.observe(t));
 }
 
-/* ---- 金の粒子（ファーストビュー） ---- */
+/* ---- 金の粒子 ---- */
 function setupParticles() {
-  const box = document.getElementById('particles');
-  if (!box || REDUCE) return;
-  const n = innerWidth < 768 ? 18 : 30;
-  for (let i = 0; i < n; i++) {
-    const p = el('i', 'particle');
-    p.style.left = (Math.random() * 100) + '%';
-    p.style.setProperty('--duration', (9 + Math.random() * 11) + 's');
-    p.style.setProperty('--delay', (Math.random() * 10) + 's');
-    p.style.setProperty('--size', (2 + Math.random() * 3).toFixed(1) + 'px');
-    box.appendChild(p);
-  }
+  if (REDUCE) return;
+  document.querySelectorAll('#particles,[data-particles]').forEach(box => {
+    const n = Number(box.dataset.particles) || (innerWidth < 768 ? 18 : 32);
+    for (let i = 0; i < n; i++) {
+      const p = el('i', 'particle');
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.setProperty('--duration', (9 + Math.random() * 11) + 's');
+      p.style.setProperty('--delay', (Math.random() * 10) + 's');
+      p.style.setProperty('--size', (2 + Math.random() * 3.5).toFixed(1) + 'px');
+      box.appendChild(p);
+    }
+  });
 }
 
-/* ---- 見えたら順に：チェックが入る・ゲージが灯る ---- */
+/* ---- 見えたら順に：チェックが入る・ゲージが灯る・数が増える ---- */
 function onSeen(nodes, fn, threshold) {
-  if (REDUCE || !('IntersectionObserver' in window)) { nodes.forEach(n => fn(n, true)); return; }
+  if (REDUCE || !HAS_IO) { nodes.forEach(n => fn(n, true)); return; }
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { fn(e.target, false); io.unobserve(e.target); }
   }), { threshold });
@@ -230,16 +195,59 @@ function setupSequences() {
   onSeen(document.querySelectorAll('[data-checks]'), (ul, now) => {
     ul.querySelectorAll('li').forEach((li, i) => now ? li.classList.add('on') : setTimeout(() => li.classList.add('on'), 250 + i * 320));
   }, 0.3);
-  onSeen(document.querySelectorAll('.gauge'), (g, now) => {
-    g.querySelectorAll('i.on').forEach((s, i) => now ? s.classList.add('lit') : setTimeout(() => s.classList.add('lit'), 150 + i * 120));
+  onSeen(document.querySelectorAll('.wave'), (w, now) => {
+    w.querySelectorAll('i[data-f]').forEach((s, i) => now ? s.classList.add('f') : setTimeout(() => s.classList.add('f'), 200 + i * 120));
   }, 0.6);
+  onSeen(document.querySelectorAll('[data-count]'), (n, now) => {
+    const goal = Number(n.dataset.count);
+    if (now) { n.textContent = goal; return; }
+    const t0 = performance.now(), dur = 1400;
+    (function step(t) {
+      const k = Math.min((t - t0) / dur, 1);
+      n.textContent = Math.max(1, Math.round(goal * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }, 0.8);
 }
 
+/* ---- 写真の視差・上の進み具合・下の帯 ---- */
+function setupScroll() {
+  const prog = document.querySelector('[data-prog]');
+  const pxs = Array.from(document.querySelectorAll('.px img'));
+  const bar = document.querySelector('[data-sticky]');
+  const hero = document.querySelector('.hero');
+  const hides = Array.from(document.querySelectorAll('[data-sticky-hide]'));
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const vh = innerHeight, doc = document.documentElement;
+    if (prog) prog.style.width = (scrollY / Math.max(1, doc.scrollHeight - vh) * 100).toFixed(2) + '%';
+    if (!REDUCE) pxs.forEach(img => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      img.style.setProperty('--py', (((r.top + r.height / 2 - vh / 2) / vh) * -6).toFixed(2) + '%');
+    });
+    if (bar && hero) {
+      const past = hero.getBoundingClientRect().bottom < 0;
+      const inHide = hides.some(z => { const r = z.getBoundingClientRect(); return r.top < vh * .8 && r.bottom > vh * .2; });
+      const show = past && !inHide;
+      bar.classList.toggle('show', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      bar.querySelector('a').tabIndex = show ? 0 : -1;
+    }
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', update);
+  update();
+}
+
+renderLimitPrices();
+renderDepth();
 renderPlans();
 renderFinal();
+renderStickyPrice();
 startCountdown();
-setupShots();
-setupSticky();
 setupReveal();
 setupParticles();
 setupSequences();
+setupScroll();
