@@ -8,3 +8,5 @@
 - カウントダウン：`main.js` の `DEADLINE_HOURS`（初めて開いた時から72時間・再読み込みでは戻らない）。
 - LINE の感想画像：`img/voices/` に画像を置き、`index.html` の `<figure class="shot">` を足す・消す。
 - 特商法：フッターのリンク（https://tamashiimichibikinok.stores.jp/tokushoho）。
+- 改行：`budoux.min.js`（Google の BudouX・Apache-2.0、日本語モデルだけを同梱）で文節ごとに折り返します。語の途中では改行しません。
+- 下の帯の値段：`PLANS` のいちばん安いプランから「〇〇円～」と出します。

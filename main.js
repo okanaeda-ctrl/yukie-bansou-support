@@ -45,8 +45,8 @@ function el(tag, cls, html) {
 /* ---- 冒頭の限定料金の一覧 ---- */
 function renderLimitPrices() {
   document.querySelectorAll('[data-limit-prices]').forEach(box => {
-    box.innerHTML = PLANS.map(p => `${p.short} <b>${p.price}円</b>`)
-      .reduce((s, x, i) => s + (i === 0 ? '' : i % 2 ? '　／　' : '<br>') + x, '');
+    box.innerHTML = PLANS.map(p => `<span class="lp">${p.short} <b>${p.price}円</b></span>`)
+      .reduce((s, x, i) => s + (i === 0 ? '' : i % 2 ? '<span class="sl"> ／ </span>' : '<br>') + x, '');
   });
 }
 
@@ -110,11 +110,33 @@ function renderFinal() {
   });
 }
 
-/* ---- 下の帯の値段（おすすめのプラン） ---- */
+/* ---- 下の帯の値段（いちばん安いプランから「〜円～」） ---- */
 function renderStickyPrice() {
   const box = document.querySelector('[data-sticky-price]');
-  const rec = PLANS.find(p => p.recommended) || PLANS[0];
-  if (box) box.innerHTML = `<span class="p">${rec.price}<small>円</small></span><span class="n">${rec.name}（おすすめ）</span>`;
+  const yen = p => Number(p.price.replace(/,/g, ''));
+  const low = PLANS.reduce((a, b) => (yen(b) < yen(a) ? b : a));
+  if (box) box.innerHTML = `<span class="p">${low.price}<small>円～</small></span>`;
+}
+
+/* ---- 日本語の改行を文節で（語の途中で折らない・BudouX） ---- */
+function wrapJapanese() {
+  if (!window.jaWrap) return;
+  const roots = document.querySelectorAll('body > header, body > section, body > div, body > a, main, footer');
+  roots.forEach(el => window.jaWrap(el));
+  // BudouX が1つにまとめた長い文節（12字超）は、助詞・「て」のあとでも折れるようにする（行より長いと「。」の前で折れてしまうため）
+  const ZW = '\u200b';
+  const splitLong = s => s.split(ZW).map(c => c.length <= 12 ? c
+    : c.replace(/([てにがをはでとも])(?=[\u3041-\u3096\u4e00-\u9fff])/g, (m, k, i) => (i >= 2 && i < c.length - 4 ? k + ZW : k))).join(ZW);
+  // BudouX が語の途中で切るもの（と|して・と|いう・当ては|まる・も|しかして）はつなぐ
+  const joinBad = new RegExp(`(と|は|も)${ZW}(?=して|いう|まる|しかして)`, 'g');
+  roots.forEach(root => {
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    for (let n; (n = tw.nextNode());) {
+      if (!n.data.includes(ZW)) continue;
+      const s = splitLong(n.data).replace(joinBad, '$1');
+      if (s !== n.data) n.data = s;
+    }
+  });
 }
 
 /* ---- カウントダウン ---- */
@@ -251,3 +273,4 @@ setupReveal();
 setupParticles();
 setupSequences();
 setupScroll();
+wrapJapanese();

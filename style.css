@@ -51,6 +51,8 @@ p,li,dd,summary{text-wrap:pretty}
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite;
 }
 @keyframes sheen{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.fall{font-family:var(--serif);font-size:clamp(25px,7.2vw,34px);font-weight:800;line-height:1.7;letter-spacing:.03em;text-align:center;color:var(--ink);margin:38px 0 6px;text-wrap:balance}
+.fall .wipe{color:var(--shu);background-image:linear-gradient(90deg,var(--shu),var(--shu))}
 .kq{font-family:var(--serif);font-size:clamp(20px,5.6vw,26px);font-weight:800;color:var(--shu);text-align:center;line-height:1.7;letter-spacing:.02em;margin:30px 0;overflow-wrap:anywhere;text-wrap:balance}
 .ew{font-family:var(--serif);font-size:1.25em;font-weight:800;color:var(--gold-hi);letter-spacing:.02em}
 .mk{background:linear-gradient(transparent 58%,var(--marker) 58%,var(--marker) 94%,transparent 94%);font-weight:700;color:var(--ink);padding:0 .06em}
@@ -153,6 +155,8 @@ html:not(.js) .rv,html:not(.js) .rv-s,html:not(.js) .rv-b,html:not(.js) .stag>*,
 .limbox .lh .g{color:var(--shu)}
 .limbox .ld{font-size:14px;font-weight:500;color:var(--ink);line-height:1.95;margin-bottom:14px}
 .limbox .ld b{font-family:var(--serif);font-size:1.15em;color:var(--shu)}
+.limbox .ld .lp{white-space:nowrap}
+.limbox .ld .sl{color:var(--mute);margin:0 .5em}
 .limbox .ln2{font-size:14px;font-weight:500;color:var(--gold-hi);line-height:1.9;margin:14px 0 0}
 .limbox .ln2 b{color:var(--shu)}
 .cd{display:flex;justify-content:center;align-items:flex-end;gap:4px;margin:12px 0 6px}
