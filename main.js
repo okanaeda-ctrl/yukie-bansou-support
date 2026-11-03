@@ -32,6 +32,7 @@ const DEADLINE_HOURS = 72;
 const DEADLINE_KEY = 'konryu_bansou_first_open_v1';
 
 document.documentElement.classList.add('js');
+const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function el(tag, cls, html) {
   const e = document.createElement(tag);
@@ -194,12 +195,44 @@ function setupSticky() {
 
 /* ---- ふわっと出る ---- */
 function setupReveal() {
-  const targets = document.querySelectorAll('.h2, .photo, .compare, .support, .voice, .ba, .gift, .limit-box, .plan, .checks, .faq, .final-list');
-  if (!('IntersectionObserver' in window)) return;
+  const targets = document.querySelectorAll('.h2, .photo, .compare, .support, .voice, .ba, .gift, .limit-box, .plan, .checks, .faq, .final-list, .wipe, .minicta');
+  if (REDUCE || !('IntersectionObserver' in window)) { targets.forEach(t => t.classList.add('in')); return; }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
   targets.forEach(t => { t.classList.add('rv'); io.observe(t); });
+}
+
+/* ---- 金の粒子（ファーストビュー） ---- */
+function setupParticles() {
+  const box = document.getElementById('particles');
+  if (!box || REDUCE) return;
+  const n = innerWidth < 768 ? 18 : 30;
+  for (let i = 0; i < n; i++) {
+    const p = el('i', 'particle');
+    p.style.left = (Math.random() * 100) + '%';
+    p.style.setProperty('--duration', (9 + Math.random() * 11) + 's');
+    p.style.setProperty('--delay', (Math.random() * 10) + 's');
+    p.style.setProperty('--size', (2 + Math.random() * 3).toFixed(1) + 'px');
+    box.appendChild(p);
+  }
+}
+
+/* ---- 見えたら順に：チェックが入る・ゲージが灯る ---- */
+function onSeen(nodes, fn, threshold) {
+  if (REDUCE || !('IntersectionObserver' in window)) { nodes.forEach(n => fn(n, true)); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { fn(e.target, false); io.unobserve(e.target); }
+  }), { threshold });
+  nodes.forEach(n => io.observe(n));
+}
+function setupSequences() {
+  onSeen(document.querySelectorAll('[data-checks]'), (ul, now) => {
+    ul.querySelectorAll('li').forEach((li, i) => now ? li.classList.add('on') : setTimeout(() => li.classList.add('on'), 250 + i * 320));
+  }, 0.3);
+  onSeen(document.querySelectorAll('.gauge'), (g, now) => {
+    g.querySelectorAll('i.on').forEach((s, i) => now ? s.classList.add('lit') : setTimeout(() => s.classList.add('lit'), 150 + i * 120));
+  }, 0.6);
 }
 
 renderPlans();
@@ -208,3 +241,5 @@ startCountdown();
 setupShots();
 setupSticky();
 setupReveal();
+setupParticles();
+setupSequences();
